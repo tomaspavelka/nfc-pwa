@@ -8,12 +8,15 @@
   <script src="script.js" defer></script>
   <style>
     body { font-family: sans-serif; padding: 2rem; text-align: center; }
-    #chip-id { font-size: 1.5rem; margin-top: 1rem; color: #0a0; }
+    button { margin: 0.5rem; padding: 0.7rem 1.2rem; }
+    #chip-id { font-size: 1.5rem; margin-top: 1rem; color: #0a0; white-space: pre-line; }
   </style>
 </head>
 <body>
-  <h1>Načíst NFC čip</h1>
-  <button id="scan">Spustit čtení</button>
+  <h1>NFC čtečka a zapisovač</h1>
+  <button id="scan-id">Načíst ID</button>
+  <button id="read-ndef">Číst NDEF</button>
+  <button id="write-text">Zapsat text</button>
   <p id="chip-id"></p>
 </body>
 </html>
