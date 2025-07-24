@@ -28,7 +28,7 @@ document.getElementById('write-text').addEventListener('click', async () => {
   if ('NDEFReader' in window) {
     try {
       const ndef = new NDEFReader();
-      await ndef.write("Hello world!");
+      await ndef.write({ records: [{ recordType: "text", data: text }] });
       document.getElementById('chip-id').textContent = 'Zápis proběhl úspěšně.';
     } catch (error) {
       alert('Chyba při zápisu: ' + error);
