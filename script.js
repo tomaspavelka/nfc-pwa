@@ -25,10 +25,10 @@ document.getElementById('write-text').addEventListener('click', async () => {
   const text = prompt('Zadej text, který chceš zapsat do NDEF:');
   if (!text) return;
 
-  if ('NDEFWriter' in window) {
+  if ('NDEFReader' in window) {
     try {
-      const ndef = new NDEFWriter();
-      await ndef.write({ records: [{ recordType: "text", data: text }] });
+      const ndef = new NDEFReader();
+      await ndef.write("Hello world!");
       document.getElementById('chip-id').textContent = 'Zápis proběhl úspěšně.';
     } catch (error) {
       alert('Chyba při zápisu: ' + error);
